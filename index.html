@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Is Derek McInnes Rangers Manager Yet?</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <style type="text/css">
+    body {
+        font-family: 'Ubuntu', sans-serif;
+    }
     h1 {
         font-size: 120px;
         text-align: center;
@@ -19,23 +28,118 @@
         display: block;
         width: 80%;
     }
+    ul {
+        text-align: center;
+        list-style: none;
+    }
+    li {
+        padding: 10px;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:visited {
+        color: blue;
+    }
+    .google-ad {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .center-align {
+        text-align: center;
+    }
 </style>
 <body>
 
-<h1>NO</h1>
+<div class="container">
 
-<img src="https://i.imgur.com/LUlrnOe.jpg" />
+    <script type="text/babel">
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Is McInnes Rangers Manager Yet? -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6264697646356100"
-     data-ad-slot="4436868535"
-     data-ad-format="auto"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+        class DerekControl extends React.Component {
+            constructor(props) {
+                super(props);
+                // switch this to true when he gets the job ;-)
+                this.state = {isNewManager: false};
+            }
+
+            render() {
+                const isNewManager = this.state.isNewManager;
+
+                let hero_image = null;
+                if (isNewManager) {
+                    hero_image = <img src="https://i.imgur.com/12aSkQq.jpg" />;
+                } else {
+                    hero_image = <img src='https://i.imgur.com/LUlrnOe.jpg' />;
+                }
+
+                return (
+                        <div>
+                            <Greeting isNewManager={isNewManager} />
+                            {hero_image}
+                        </div>
+                );
+            }
+        }
+
+        function YesGreeting(props) {
+            return (<div><h1>YES!</h1><h2>Welcome home, Derek.</h2></div>);
+        }
+
+        function NoGreeting(props) {
+            return <h1>NO</h1>;
+        }
+
+        function Greeting(props) {
+            const isNewManager = props.isNewManager;
+            if (isNewManager) {
+                return <YesGreeting />;
+            }
+            return <NoGreeting />;
+        }
+
+        ReactDOM.render(
+                <DerekControl />,
+            document.getElementById('root')
+        );
+
+    </script>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="root"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 google-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Is McInnes Rangers Manager Yet? -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6264697646356100"
+                 data-ad-slot="4436868535"
+                 data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <a class="twitter-timeline"  href="https://twitter.com/search?q=derek%20mcinnes" data-widget-id="926030365088731136">
+                Tweets about derek mcinnes</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Derek_McInnes">Wikipedia</a></li>
+                <li><a href="https://www.rangers.co.uk">Rangers</a></li>
+                <li><a href="https://www.afc.co.uk">Aberdeen</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109038647-1"></script>
